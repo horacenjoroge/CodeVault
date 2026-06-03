@@ -1,0 +1,40 @@
+---
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Problem from "../components/Problem.astro";
+import Qualification from "../components/Qualification.astro";
+import Process from "../components/Process.astro";
+import BuildLedger from "../components/BuildLedger.astro";
+import AiWorkflow from "../components/AiWorkflow.astro";
+import InsideVault from "../components/InsideVault.astro";
+import NoBlackBox from "../components/NoBlackBox.astro";
+import Engagements from "../components/Engagements.astro";
+import Work from "../components/Work.astro";
+import FAQ from "../components/FAQ.astro";
+import FinalCTA from "../components/FinalCTA.astro";
+import Footer from "../components/Footer.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "CodeVault — Software systems for founders and growing teams";
+const description =
+  "CodeVault helps founders and small teams build landing pages, MVPs, dashboards, mobile apps, automations, AI tools, and production-ready software with clear scope and clean handoff.";
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <Hero />
+    <Problem />
+    <Qualification />
+    <Process />
+    <BuildLedger />
+    <AiWorkflow />
+    <InsideVault />
+    <NoBlackBox />
+    <Engagements />
+    <Work />
+    <FAQ />
+    <FinalCTA />
+  </main>
+  <Footer />
+</BaseLayout>

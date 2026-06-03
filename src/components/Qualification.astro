@@ -1,0 +1,52 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+
+const fitItems = [
+  "You have an idea, MVP, or internal tool that needs to become real software.",
+  "Your current website does not clearly explain your offer or convert visitors.",
+  "Your existing app is buggy, unfinished, slow, or hard to maintain.",
+  "You need dashboards, automations, APIs, or AI tools to reduce manual work.",
+  "You want clear communication, written scope, and clean handoff.",
+];
+
+const notFitItems = [
+  "You only want the cheapest possible developer.",
+  "You want to start without clear goals or feedback.",
+  "You expect a full product overnight without scope.",
+  "You do not want to review or test the work.",
+  "You want a huge agency layer instead of a focused build partner.",
+];
+---
+
+<section class="section section-soft" id="qualification">
+  <div class="shell split-fit" data-reveal>
+    <div>
+      <SectionLabel label="Who This Is For" />
+      <h2>Is this you?</h2>
+      <ul class="checklist">
+        {fitItems.map((item) => (
+          <li>
+            <span class="symbol symbol-positive">✓</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+      <p class="section-note">
+        Most CodeVault clients are founders, small teams, operators, and businesses that
+        need reliable product development without hiring a full-time engineering team.
+      </p>
+    </div>
+
+    <div>
+      <SectionLabel label="Not The Right Fit If" />
+      <ul class="checklist">
+        {notFitItems.map((item) => (
+          <li>
+            <span class="symbol symbol-muted">×</span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+</section>

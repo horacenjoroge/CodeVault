@@ -1,0 +1,37 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+
+const faqs = [
+  ["How much does a project cost?", "It depends on scope, timeline, and complexity. A landing page is usually smaller than an MVP or product rescue. The first call is used to understand the work and suggest the right engagement."],
+  ["How long does a landing page take?", "Most focused landing pages can be completed in one to two weeks if the offer, content direction, and feedback are clear."],
+  ["How long does an MVP take?", "MVP timelines depend on features, integrations, and quality expectations. CodeVault starts by defining the smallest useful version that can be launched and tested."],
+  ["Can you work with my existing codebase?", "Yes. For existing projects, the first step is usually an audit to understand the structure, bugs, risks, and best path forward."],
+  ["Can you design and build?", "Yes. CodeVault can handle structure, UI direction, frontend, backend, integrations, and deployment support depending on the project."],
+  ["Can you deploy the project?", "Yes. Deployment support can include hosting setup, environment variables, domains, production checks, and handoff notes."],
+  ["Can you build mobile apps?", "Yes. CodeVault can build mobile apps using React Native, especially for MVPs, internal tools, and product ideas that need both iOS and Android coverage."],
+  ["Can you add AI features?", "Yes, when AI actually helps the product. This can include AI writing, summarization, automation, classification, assistants, or workflow acceleration."],
+  ["What do you need from me to start?", "A clear idea of the problem, target users, deadline, budget range, examples you like, and any existing assets or code."],
+  ["Do you offer ongoing support?", "Yes. After launch, CodeVault can continue with fixes, improvements, new features, and product support through a monthly engagement."],
+];
+---
+
+<section class="section" id="faq">
+  <div class="shell" data-reveal>
+    <SectionLabel label="Questions" />
+    <h2>Before we work together.</h2>
+
+    <div class="faq-stack">
+      {faqs.map(([question, answer]) => (
+        <details class="faq-item">
+          <summary>
+            <span>{question}</span>
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>{answer}</p>
+          </div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

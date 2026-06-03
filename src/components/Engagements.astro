@@ -1,0 +1,68 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+
+const offers = [
+  {
+    number: "01",
+    title: "Landing Page Sprint",
+    bestFor: "Businesses that need a sharp website that explains the offer and turns visitors into leads.",
+    includes: "Strategy, copy structure, responsive build, contact CTA, deployment support.",
+    timeline: "1–2 weeks depending on scope.",
+    cta: "Start a landing page sprint →",
+  },
+  {
+    number: "02",
+    title: "MVP Build",
+    bestFor: "Founders who need a working SaaS, app, internal tool, or AI-powered product.",
+    includes: "Scope, UI, frontend, backend, database, integrations, testing, launch support.",
+    timeline: "Scoped after discovery.",
+    cta: "Plan an MVP build →",
+  },
+  {
+    number: "03",
+    title: "Product Rescue",
+    bestFor: "Existing projects that are buggy, slow, unfinished, or hard to maintain.",
+    includes: "Audit, bug fixing, refactor plan, performance improvements, UI polish, deployment fixes.",
+    timeline: "Depends on project condition.",
+    cta: "Fix an existing product →",
+  },
+  {
+    number: "04",
+    title: "Monthly Build Partner",
+    bestFor: "Ongoing product work without hiring a full-time developer.",
+    includes: "Planned milestones, weekly updates, feature work, fixes, reviews, and support.",
+    timeline: "Monthly engagement.",
+    cta: "Discuss ongoing support →",
+  },
+];
+---
+
+<section class="section section-soft" id="engagements">
+  <div class="shell" data-reveal>
+    <SectionLabel label="Engagements" />
+    <h2>Choose the build shape that fits your stage.</h2>
+
+    <div class="engagement-grid">
+      {offers.map((offer) => (
+        <article class="engagement-card">
+          <p class="row-number">{offer.number}</p>
+          <h3>{offer.title}</h3>
+          <p><strong>Best for:</strong> {offer.bestFor}</p>
+          <p><strong>Includes:</strong> {offer.includes}</p>
+          <p class="engagement-timeline"><strong>Timeline:</strong> {offer.timeline}</p>
+          <a class="text-link" href="#final-cta">{offer.cta}</a>
+        </article>
+      ))}
+    </div>
+
+    <div class="value-callout">
+      <h3>You will spend less time managing the build.</h3>
+      <p>
+        A poor build costs more than the developer fee. It costs time, trust, missed
+        launches, and rework. The goal is to make the scope clear, ship useful software,
+        and keep you informed at every step.
+      </p>
+      <a class="text-link" href="#final-cta">See what your project needs →</a>
+    </div>
+  </div>
+</section>

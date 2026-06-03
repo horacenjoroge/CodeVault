@@ -1,0 +1,46 @@
+---
+const visualBlocks = [
+  ["Build plan", "Scope, flows, milestones"],
+  ["Dashboard", "KPIs, filters, actions"],
+  ["API", "Auth, data, integrations"],
+  ["Mobile app", "Tasks, messaging, sync"],
+  ["Deployment", "Env, hosting, checks"],
+  ["Handoff notes", "Docs, access, next steps"],
+];
+---
+
+<section class="hero-panel" id="top">
+  <div class="shell hero-grid" data-reveal>
+    <div class="hero-copy">
+      <p class="section-label">Software systems for founders and growing teams</p>
+      <h1 class="hero-title">
+        Your business needs more than a website.
+        <span class="accent-text">It needs software that sells, automates, and scales.</span>
+      </h1>
+      <p class="hero-lead">
+        CodeVault helps founders and small teams turn rough ideas into launch-ready software
+        — landing pages, MVPs, dashboards, mobile apps, automations, and AI tools built with
+        clear scope and clean handoff.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-dark" href="#final-cta">Book a 30-minute build call →</a>
+      </div>
+      <p class="hero-micro">
+        Bring the idea, broken workflow, or unfinished product. We’ll help you find the
+        clearest path to ship.
+      </p>
+      <p class="hero-proof">
+        Landing pages · MVPs · Dashboards · Mobile apps · AI tools · Production fixes
+      </p>
+    </div>
+
+    <aside class="hero-visual" aria-label="CodeVault build system visual">
+      {visualBlocks.map(([title, body], index) => (
+        <div class={`visual-block visual-block-${index + 1}`}>
+          <p>{title}</p>
+          <span>{body}</span>
+        </div>
+      ))}
+    </aside>
+  </div>
+</section>

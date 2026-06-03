@@ -1,0 +1,46 @@
+---
+const links = [
+  { href: "#problem", label: "Problem" },
+  { href: "#process", label: "Process" },
+  { href: "#build-ledger", label: "Build Ledger" },
+  { href: "#inside-vault", label: "Inside the Vault" },
+  { href: "#work", label: "Work" },
+  { href: "#faq", label: "FAQ" },
+];
+---
+
+<header class="site-header">
+  <nav class="shell nav-bar" aria-label="Primary navigation">
+    <a href="#top" class="brand" aria-label="CodeVault home">
+      <span class="brand-mark">C</span>
+      <span>CodeVault</span>
+    </a>
+
+    <button
+      class="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-navigation"
+      data-menu-toggle
+    >
+      Menu
+    </button>
+
+    <div class="desktop-nav" aria-label="Desktop navigation">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+    </div>
+
+    <a class="button button-dark desktop-cta" href="#final-cta">Book 30 minutes →</a>
+  </nav>
+
+  <div class="mobile-panel" id="mobile-navigation" data-menu="true" data-open="false">
+    <div class="shell mobile-nav">
+      {links.map((link) => (
+        <a href={link.href}>{link.label}</a>
+      ))}
+      <a class="button button-accent mobile-cta" href="#final-cta">Book 30 minutes →</a>
+    </div>
+  </div>
+</header>

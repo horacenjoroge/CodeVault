@@ -1,0 +1,39 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+
+const steps = [
+  ["01", "Decode", "Clarify the business goal, users, workflows, constraints, and success criteria."],
+  ["02", "Blueprint", "Map the pages, screens, data, integrations, milestones, and handoff requirements."],
+  ["03", "Build", "Design and develop the working product in focused delivery cycles."],
+  ["04", "Harden", "Test, fix, optimize, improve responsiveness, and prepare the product for real users."],
+  ["05", "Handoff", "Deploy, document, and make sure you own the code, setup, and next steps."],
+];
+---
+
+<section class="section" id="process">
+  <div class="shell" data-reveal>
+    <SectionLabel label="Your Idea. Your System. Your Build." />
+    <h2>We turn rough requirements into working software.</h2>
+    <div class="copy-grid">
+      <p>
+        We work inside your reality: your budget, your market, your timeline, and your
+        current tools. The goal is to clarify what needs to ship, what can wait, and what
+        success looks like.
+      </p>
+      <p>
+        CodeVault keeps the path visible from first scope to final handoff, so your build
+        moves forward without mystery process or bloated delivery layers.
+      </p>
+    </div>
+
+    <div class="process-list">
+      {steps.map(([num, title, body]) => (
+        <article class="process-row">
+          <p class="row-number">{num}</p>
+          <h3>{title}</h3>
+          <p>{body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+
+const weekItems = [
+  "Shipped: landing page structure and mobile nav",
+  "Built: contact form and validation",
+  "In progress: dashboard API integration",
+  "Blocked: waiting for final copy",
+  "Needs review: pricing section",
+];
+
+const handoffItems = [
+  "Source code organized",
+  "Environment variables documented",
+  "Deployment steps written",
+  "Known issues listed",
+  "Next improvements suggested",
+];
+---
+
+<section class="section section-soft" id="build-ledger">
+  <div class="shell" data-reveal>
+    <SectionLabel label="The Build Ledger" />
+    <h2>Every build has a clear record.</h2>
+    <p class="section-lead narrow-copy">
+      No silent weeks. No guessing what changed. Each project keeps a simple build ledger:
+      what shipped, what changed, what is blocked, what needs review, and what happens next.
+    </p>
+
+    <div class="ledger-grid">
+      <article class="ledger-box">
+        <p class="ledger-title">This Week’s Build</p>
+        <div class="ledger-lines">
+          {weekItems.map((item) => (
+            <p>&gt; <span>{item}</span></p>
+          ))}
+        </div>
+      </article>
+
+      <article class="ledger-box">
+        <p class="ledger-title">Handoff Notes</p>
+        <div class="ledger-lines">
+          {handoffItems.map((item) => (
+            <p>&gt; <span>{item}</span></p>
+          ))}
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

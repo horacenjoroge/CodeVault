@@ -1,0 +1,30 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+
+const points = [
+  "Clear milestones before development starts",
+  "Regular build updates",
+  "Review points before final delivery",
+  "Source code and access handed over",
+  "Deployment and setup documented",
+];
+---
+
+<section class="section" id="no-black-box">
+  <div class="shell no-black-box" data-reveal>
+    <div>
+      <SectionLabel label="No Black Box Builds" />
+      <h2>You should understand your own project.</h2>
+      <p class="section-lead">
+        CodeVault keeps the work visible, the scope written, and the handoff clean. No
+        mystery progress, no hidden setup, no code trapped in someone else’s head.
+      </p>
+    </div>
+
+    <ul class="bullet-stack">
+      {points.map((point) => (
+        <li>{point}</li>
+      ))}
+    </ul>
+  </div>
+</section>

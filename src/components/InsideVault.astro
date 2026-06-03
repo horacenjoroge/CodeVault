@@ -1,0 +1,35 @@
+---
+import SectionLabel from "./SectionLabel.astro";
+
+const assets = [
+  ["01", "Clear scope", "A practical build plan with features, priorities, milestones, and success criteria."],
+  ["02", "Working product", "Landing page, MVP, dashboard, mobile app, Chrome extension, automation, or AI tool built to the agreed scope."],
+  ["03", "Clean codebase", "Organized code that can be maintained, extended, and handed to another developer if needed."],
+  ["04", "Integrations", "APIs, databases, authentication, payments, email, AI tools, and third-party services where needed."],
+  ["05", "Launch support", "Deployment help, production checks, environment setup, and launch preparation."],
+  ["06", "Documentation", "Setup notes, environment variables, deployment steps, and known next improvements."],
+  ["07", "Ownership", "You keep the source code, accounts, access, and project knowledge."],
+  ["08", "Support path", "A clear option for ongoing fixes, improvements, and new features."],
+];
+---
+
+<section class="section" id="inside-vault">
+  <div class="shell" data-reveal>
+    <SectionLabel label="Inside The Vault" />
+    <h2>The assets your business keeps after the build.</h2>
+    <p class="section-lead narrow-copy">
+      A project should not disappear into a developer’s laptop. You should leave with
+      working software, organized code, access, notes, and a clear path forward.
+    </p>
+
+    <div class="process-list">
+      {assets.map(([num, title, body]) => (
+        <article class="process-row">
+          <p class="row-number">{num}</p>
+          <h3>{title}</h3>
+          <p>{body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
