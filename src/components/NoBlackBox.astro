@@ -11,17 +11,17 @@ const points = [
 ---
 
 <section class="section" id="no-black-box">
-  <div class="shell no-black-box" data-reveal>
+  <div class="shell no-black-box no-black-box-shell" data-reveal>
     <div>
       <SectionLabel label="No Black Box Builds" />
-      <h2>You should understand your own project.</h2>
+      <h2>You should <span class="no-black-box-accent">understand</span> your own project.</h2>
       <p class="section-lead">
         CodeVault keeps the work visible, the scope written, and the handoff clean. No
         mystery progress, no hidden setup, no code trapped in someone else’s head.
       </p>
     </div>
 
-    <ul class="bullet-stack">
+    <ul class="bullet-stack no-black-box-list">
       {points.map((point) => (
         <li>{point}</li>
       ))}

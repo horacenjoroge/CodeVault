@@ -38,31 +38,31 @@ const offers = [
 ---
 
 <section class="section section-soft" id="engagements">
-  <div class="shell" data-reveal>
+  <div class="shell engagements-shell" data-reveal>
     <SectionLabel label="Engagements" />
-    <h2>Choose the build shape that fits your stage.</h2>
+    <h2>Choose the <span class="engagements-accent">build shape</span> that fits your stage.</h2>
 
     <div class="engagement-grid">
       {offers.map((offer) => (
         <article class="engagement-card">
           <p class="row-number">{offer.number}</p>
           <h3>{offer.title}</h3>
-          <p><strong>Best for:</strong> {offer.bestFor}</p>
-          <p><strong>Includes:</strong> {offer.includes}</p>
-          <p class="engagement-timeline"><strong>Timeline:</strong> {offer.timeline}</p>
-          <a class="text-link" href="#final-cta">{offer.cta}</a>
+          <p><strong class="engagement-label">Best for:</strong> {offer.bestFor}</p>
+          <p><strong class="engagement-label">Includes:</strong> {offer.includes}</p>
+          <p class="engagement-timeline"><strong class="engagement-label">Timeline:</strong> {offer.timeline}</p>
+          <a class="text-link engagement-link" href="#final-cta">{offer.cta}</a>
         </article>
       ))}
     </div>
 
     <div class="value-callout">
-      <h3>You will spend less time managing the build.</h3>
+      <h3>You will spend <span class="value-callout-accent">less time</span> managing the build.</h3>
       <p>
         A poor build costs more than the developer fee. It costs time, trust, missed
         launches, and rework. The goal is to make the scope clear, ship useful software,
         and keep you informed at every step.
       </p>
-      <a class="text-link" href="#final-cta">See what your project needs →</a>
+      <a class="text-link value-callout-link" href="#final-cta">See what your project needs →</a>
     </div>
   </div>
 </section>
