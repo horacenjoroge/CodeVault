@@ -1,52 +1,69 @@
 ---
 import SectionLabel from "./SectionLabel.astro";
 
-const fitItems = [
-  "You have an idea, MVP, or internal tool that needs to become real software.",
-  "Your current website does not clearly explain your offer or convert visitors.",
-  "Your existing app is buggy, unfinished, slow, or hard to maintain.",
-  "You need dashboards, automations, APIs, or AI tools to reduce manual work.",
-  "You want clear communication, written scope, and clean handoff.",
-];
-
-const notFitItems = [
-  "You only want the cheapest possible developer.",
-  "You want to start without clear goals or feedback.",
-  "You expect a full product overnight without scope.",
-  "You do not want to review or test the work.",
-  "You want a huge agency layer instead of a focused build partner.",
+const audienceBlocks = [
+  {
+    number: "01",
+    title: "Founders with rough ideas",
+    copy:
+      "You have the product direction, market insight, or business problem — but need someone to turn it into screens, flows, data, integrations, and a build plan that can actually ship.",
+    examples: ["MVPs", "SaaS prototypes", "AI tools", "Investor/demo builds"],
+  },
+  {
+    number: "02",
+    title: "Businesses with broken workflows",
+    copy:
+      "Your team is wasting time in spreadsheets, manual follow-ups, disconnected tools, or repetitive admin. You need software that reduces friction and gives the business a cleaner operating system.",
+    examples: ["Dashboards", "Automations", "Internal tools", "API integrations"],
+  },
+  {
+    number: "03",
+    title: "Products that need rescue",
+    copy:
+      "You already have a website, app, or codebase, but it is slow, unfinished, buggy, unclear, or hard to extend. You need structure, cleanup, fixes, and a practical path forward.",
+    examples: ["Refactors", "Bug fixing", "Performance", "Deployment repair"],
+  },
 ];
 ---
 
-<section class="section section-soft" id="qualification">
-  <div class="shell split-fit" data-reveal>
-    <div>
-      <SectionLabel label="Who This Is For" />
-      <h2>Is this you?</h2>
-      <ul class="checklist">
-        {fitItems.map((item) => (
-          <li>
-            <span class="symbol symbol-positive">✓</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-      <p class="section-note">
-        Most CodeVault clients are founders, small teams, operators, and businesses that
-        need reliable product development without hiring a full-time engineering team.
-      </p>
+<section class="section" id="qualification">
+  <div class="shell qualification-shell" data-reveal>
+    <SectionLabel label="Built For" />
+    <h2>
+      For teams that need <span class="qualification-accent">software momentum</span>
+      without building a <span class="qualification-accent">full engineering department</span>.
+    </h2>
+    <p class="section-lead narrow-copy">
+      CodeVault is for founders, operators, and small teams who need practical software
+      shipped clearly: landing pages that convert, MVPs that validate ideas, dashboards
+      that organize work, automations that remove manual tasks, and products that are
+      easier to maintain after launch.
+    </p>
+
+    <div class="qualification-grid">
+      {audienceBlocks.map((block) => (
+        <article class="qualification-card">
+          <p class="qualification-number">{block.number}</p>
+          <h3>{block.title}</h3>
+          <p>{block.copy}</p>
+          <div class="qualification-examples" aria-label={`${block.title} examples`}>
+            {block.examples.map((example) => (
+              <span class="qualification-chip">{example}</span>
+            ))}
+          </div>
+        </article>
+      ))}
     </div>
 
-    <div>
-      <SectionLabel label="Not The Right Fit If" />
-      <ul class="checklist">
-        {notFitItems.map((item) => (
-          <li>
-            <span class="symbol symbol-muted">×</span>
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
+    <div class="qualification-band">
+      <p class="qualification-band-label">Not a good fit when</p>
+      <p>
+        This is not the right engagement if the goal is only to find the cheapest
+        possible code, start without clear priorities, skip review cycles, or expect a
+        complete product overnight. CodeVault works best when there is a real business
+        problem, a decision-maker involved, and a willingness to define the scope before
+        building.
+      </p>
     </div>
   </div>
 </section>
