@@ -28,17 +28,29 @@ const audienceBlocks = [
 
 <section class="section" id="qualification">
   <div class="shell qualification-shell" data-reveal>
-    <SectionLabel label="Built For" />
-    <h2>
-      For teams that need <span class="qualification-accent">software momentum</span>
-      without building a <span class="qualification-accent">full engineering department</span>.
-    </h2>
-    <p class="section-lead narrow-copy">
-      CodeVault is for founders, operators, and small teams who need practical software
-      shipped clearly: landing pages that convert, MVPs that validate ideas, dashboards
-      that organize work, automations that remove manual tasks, and products that are
-      easier to maintain after launch.
-    </p>
+    <div class="section-split built-for-split">
+      <div>
+        <SectionLabel label="Built For" />
+        <h2>
+          For teams that need <span class="qualification-accent">software momentum</span>
+          without building a <span class="qualification-accent">full engineering department</span>.
+        </h2>
+        <p class="section-lead narrow-copy">
+          CodeVault is for founders, operators, and small teams who need practical software
+          shipped clearly: landing pages that convert, MVPs that validate ideas, dashboards
+          that organize work, automations that remove manual tasks, and products that are
+          easier to maintain after launch.
+        </p>
+      </div>
+
+      <div class="illustration-wrap built-for-illustration-wrap">
+        <img
+          src="/illustrations/3.svg"
+          alt="Planning and building a software product"
+          class="section-illustration built-for-illustration"
+        />
+      </div>
+    </div>
 
     <div class="qualification-grid">
       {audienceBlocks.map((block) => (

@@ -1,18 +1,3 @@
----
-const visualBlocks = [
-  ["Build plan", "Scope, flows, milestones"],
-  ["Dashboard", "KPIs, filters, actions"],
-  ["API", "Auth, data, integrations"],
-  ["Mobile app", "Tasks, messaging, sync"],
-  ["Deployment", "Env, hosting, checks"],
-  [
-    "Handoff notes",
-    "What we’ll document:\n• code structure\n• access and credentials\n• deployment steps\n• next improvements",
-  ],
-];
-
----
-
 <section class="hero-panel" id="top">
   <div class="shell hero-grid" data-reveal>
     <div class="hero-copy">
@@ -39,12 +24,13 @@ const visualBlocks = [
     </div>
 
     <aside class="hero-visual" aria-label="CodeVault build system visual">
-      {visualBlocks.map(([title, body], index) => (
-        <div class={`visual-block visual-block-${index + 1}`}>
-          <p>{title}</p>
-          <span>{body}</span>
-        </div>
-      ))}
+      <div class="illustration-wrap hero-illustration-wrap">
+        <img
+          src="/illustrations/1.svg"
+          alt="CodeVault software development illustration"
+          class="section-illustration hero-illustration"
+        />
+      </div>
     </aside>
   </div>
 </section>

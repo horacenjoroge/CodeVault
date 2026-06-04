@@ -251,11 +251,52 @@ select {
   .hero-grid,
   .copy-grid,
   .split-fit,
+  .section-split,
   .ledger-grid,
   .cta-grid,
   .no-black-box {
     display: grid;
     gap: clamp(2rem, 5vw, 5rem);
+  }
+
+  .section-split {
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+    gap: clamp(2.5rem, 6vw, 5rem);
+    align-items: center;
+  }
+
+  .illustration-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .illustration-frame {
+    border: 1px solid var(--border);
+    background: #f8faf8;
+    border-radius: 24px;
+    padding: clamp(1rem, 3vw, 2rem);
+  }
+
+  .section-illustration {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero-illustration {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .problem-illustration,
+  .built-for-illustration,
+  .ai-illustration,
+  .vault-illustration {
+    max-width: 440px;
+    margin-inline: auto;
   }
 
   .hero-grid {
@@ -345,70 +386,32 @@ select {
   }
 
   .hero-visual {
-    position: relative;
-    min-height: 25rem;
-    padding: 0.25rem 0 0.25rem 0.15rem;
+    min-height: auto;
+    padding: 0;
   }
 
-  .hero-visual::before {
-    content: "";
-    position: absolute;
-    inset: 7% 4% 5% 8%;
-    border: 1px solid rgba(22, 101, 52, 0.18);
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(245, 245, 242, 0.88)),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 30px,
-        rgba(10, 10, 10, 0.03) 30px,
-        rgba(10, 10, 10, 0.03) 31px
-      );
-    box-shadow: 10px 10px 0 rgba(6, 6, 6, 0.04);
+  .hero-illustration-wrap {
+    width: 100%;
+    padding: 0;
   }
-
-  .visual-block {
-    position: absolute;
-    width: min(12rem, 42%);
-    padding: 1rem 1rem 0.95rem;
-    border: 1px solid var(--border);
-    background: rgba(255, 255, 255, 0.96);
-    box-shadow: 8px 8px 0 rgba(6, 6, 6, 0.04);
-    z-index: 1;
-  }
-
-  .visual-block p,
-  .visual-block span {
-    margin: 0;
-  }
-
-  .visual-block p {
-    color: var(--accent);
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-
-  .visual-block span {
-    display: block;
-    margin-top: 0.45rem;
-    color: #202020;
-    font-size: 0.96rem;
-    line-height: 1.4;
-    white-space: pre-line;
-  }
-
-  .visual-block-1 { top: 1rem; left: 0; }
-  .visual-block-2 { top: 3.4rem; right: 0.2rem; }
-  .visual-block-3 { top: 9.2rem; left: 8%; }
-  .visual-block-4 { top: 11.8rem; right: 6%; }
-  .visual-block-5 { bottom: 2.6rem; left: 0.3rem; }
-  .visual-block-6 { bottom: 0.35rem; right: 0.1rem; }
-
   .copy-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .problem-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.78fr);
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+
+  .problem-illustration-wrap {
+    align-self: start;
+  }
+
+  .problem-illustration-wrap,
+  .vault-illustration-wrap {
+    padding: 0.5rem 0;
   }
 
   .qualification-shell > .section-label {
@@ -436,6 +439,10 @@ select {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1.75rem;
     margin-top: 3rem;
+  }
+
+  .built-for-split {
+    align-items: center;
   }
 
   .qualification-card {
@@ -593,6 +600,10 @@ select {
     box-shadow: 8px 8px 0 rgba(6, 6, 6, 0.03);
   }
 
+  .ai-illustration-wrap {
+    margin-bottom: 1.15rem;
+  }
+
   .ai-workflow-panel + .ai-workflow-panel {
     margin-top: 1.1rem;
     padding-top: 1.1rem;
@@ -712,6 +723,10 @@ select {
 
   .inside-vault-list {
     border-top: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border) 68%);
+  }
+
+  .vault-split {
+    align-items: start;
   }
 
   .process-row,
@@ -1101,11 +1116,13 @@ select {
   .hero-grid,
   .copy-grid,
   .split-fit,
+  .section-split,
   .ledger-grid,
   .cta-grid,
   .no-black-box,
   .work-row,
   .problem-compare,
+  .problem-split,
   .qualification-grid,
   .ai-workflow-grid,
   .footer-grid {
@@ -1117,8 +1134,7 @@ select {
   }
 
   .hero-visual {
-    min-height: 24rem;
-    padding: 0.5rem 0;
+    padding: 0;
   }
 
   .engagement-grid {
@@ -1169,6 +1185,10 @@ select {
 
   .hero-visual {
     min-height: 25rem;
+  }
+
+  .section-illustration {
+    max-width: 340px;
   }
 
   .visual-block {

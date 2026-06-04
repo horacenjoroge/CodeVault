@@ -15,15 +15,27 @@ const assets = [
 
 <section class="section" id="inside-vault">
   <div class="shell inside-vault-shell" data-reveal>
-    <SectionLabel label="Inside The Vault" />
-    <h2>
-      The <span class="inside-vault-accent">assets your business keeps</span> after the
-      build.
-    </h2>
-    <p class="section-lead narrow-copy">
-      A project should not disappear into a developer’s laptop. You should leave with
-      working software, organized code, access, notes, and a clear path forward.
-    </p>
+    <div class="section-split vault-split">
+      <div>
+        <SectionLabel label="Inside The Vault" />
+        <h2>
+          The <span class="inside-vault-accent">assets your business keeps</span> after the
+          build.
+        </h2>
+        <p class="section-lead narrow-copy">
+          A project should not disappear into a developer’s laptop. You should leave with
+          working software, organized code, access, notes, and a clear path forward.
+        </p>
+      </div>
+
+      <div class="illustration-wrap vault-illustration-wrap">
+        <img
+          src="/illustrations/5.svg"
+          alt="Organized software handoff with code, documentation, and deployment assets"
+          class="section-illustration vault-illustration"
+        />
+      </div>
+    </div>
 
     <div class="process-list inside-vault-list">
       {assets.map(([num, title, body]) => (
