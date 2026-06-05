@@ -1,0 +1,252 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SectionLabel from "../components/SectionLabel.astro";
+
+const title = "Start a Project — CodeVault";
+const description =
+  "Tell CodeVault what you need built, fixed, improved, or maintained. Submit a project inquiry or book a meeting to discuss your software needs.";
+
+const serviceOptions = [
+  "Custom Software Development",
+  "Web Applications",
+  "Mobile Applications",
+  "Websites & Portals",
+  "Database Design & Management",
+  "UI/UX Design",
+  "API Development & Integration",
+  "Desktop Applications",
+  "Server Management & Maintenance",
+  "MVP Build",
+  "Product Rescue / Bug Fixing",
+  "Monthly Build Partner",
+  "AI Tool / Automation",
+  "Not sure yet",
+];
+
+const needOptions = [
+  "Build something new",
+  "Improve an existing product",
+  "Fix bugs or performance issues",
+  "Design or redesign the user interface",
+  "Connect APIs or third-party services",
+  "Set up or improve a database",
+  "Deploy or manage a server",
+  "Add automation or AI features",
+  "Maintain and support an existing system",
+];
+
+const budgetOptions = [
+  "Less than $1,000",
+  "$1,000 – $3,000",
+  "$3,000 – $7,500",
+  "$7,500 – $15,000",
+  "$15,000+",
+  "Not sure yet",
+];
+
+const timelineOptions = [
+  "Immediate",
+  "2–4 weeks",
+  "1–3 months",
+  "3+ months",
+  "Flexible / not sure",
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <section class="section start-project-hero">
+      <div class="shell" data-reveal>
+        <SectionLabel label="Start A Project" />
+        <h1 class="hero-title start-project-title">Tell us what you need built.</h1>
+        <p class="section-lead start-project-lead">
+          Share the system, product, workflow, or platform you want to build or improve.
+          CodeVault will use your details to understand the scope, timeline, budget
+          range, and best next step.
+        </p>
+
+        <div class="start-project-options">
+          <a class="start-option-card" href="#project-form">
+            <p class="start-option-label">Option 01</p>
+            <h2>Submit a project inquiry</h2>
+            <p>Best when you want to explain the project in detail first.</p>
+          </a>
+
+          <a class="start-option-card" href="#book-meeting">
+            <p class="start-option-label">Option 02</p>
+            <h2>Book a meeting</h2>
+            <p>Best when you would rather talk through the idea directly.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="project-form">
+      <div class="shell" data-reveal>
+        <SectionLabel label="Project Inquiry" />
+        <h2>Share the project details.</h2>
+        <p class="section-lead start-project-section-lead">
+          The more context you provide, the easier it is for CodeVault to understand the
+          scope and recommend the right next step.
+        </p>
+
+        <form id="project-inquiry-form" class="project-inquiry-form project-inquiry-form-light" aria-label="Project inquiry form">
+          <div class="project-inquiry-grid">
+            <label class="form-field">
+              <span class="form-label">First name *</span>
+              <input type="text" name="firstName" autocomplete="given-name" required />
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Last name</span>
+              <input type="text" name="lastName" autocomplete="family-name" />
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Email address *</span>
+              <input type="email" name="email" autocomplete="email" required />
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Phone / WhatsApp</span>
+              <input type="tel" name="phone" autocomplete="tel" />
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Company / organization</span>
+              <input type="text" name="company" autocomplete="organization" />
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Service interested in *</span>
+              <select name="service" required data-service-select>
+                <option value="">Select a service</option>
+                {serviceOptions.map((option) => (
+                  <option value={option}>{option}</option>
+                ))}
+              </select>
+            </label>
+
+            <fieldset class="form-field form-field-full form-check-group">
+              <legend class="form-label">What do you need help with?</legend>
+              <div class="form-check-grid">
+                {needOptions.map((option, index) => (
+                  <label class="form-check" for={`need-${index}`}>
+                    <input id={`need-${index}`} type="checkbox" name="needs" value={option} />
+                    <span>{option}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <label class="form-field">
+              <span class="form-label">Project budget range *</span>
+              <select name="budget" required>
+                <option value="">Select a budget range</option>
+                {budgetOptions.map((option) => (
+                  <option value={option}>{option}</option>
+                ))}
+              </select>
+            </label>
+
+            <label class="form-field">
+              <span class="form-label">Project timeline *</span>
+              <select name="timeline" required>
+                <option value="">Select a timeline</option>
+                {timelineOptions.map((option) => (
+                  <option value={option}>{option}</option>
+                ))}
+              </select>
+            </label>
+
+            <label class="form-field form-field-full">
+              <span class="form-label">Project details / requirements *</span>
+              <textarea
+                name="message"
+                rows="7"
+                placeholder="Tell us what you need built, what is broken or missing, who it is for, and any examples you like."
+                required
+              ></textarea>
+            </label>
+
+            <label class="form-field form-field-full">
+              <span class="form-label">File upload</span>
+              <input type="file" name="attachment" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg,.zip" />
+              <span class="form-helper">
+                Optional. Upload a brief, screenshot, wireframe, existing notes, or project
+                document.
+              </span>
+            </label>
+          </div>
+
+          <div class="project-inquiry-actions">
+            <button class="button button-accent final-cta-button" type="submit">
+              Send project inquiry →
+            </button>
+            <p class="form-privacy-note">
+              By submitting this form, you agree that CodeVault may contact you about your
+              project. We only use your details to respond to your inquiry. See our
+              <a href="/privacy">Privacy Policy</a>.
+            </p>
+            <p class="form-success-message form-success-message-light" aria-live="polite" data-form-success hidden>
+              Thanks — your project inquiry has been captured. CodeVault will review the
+              details and get back to you.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="book-meeting">
+      <div class="shell start-project-meeting" data-reveal>
+        <SectionLabel label="Book A Meeting" />
+        <h2>Prefer to talk it through?</h2>
+        <p class="section-lead start-project-section-lead">
+          Book a short discovery meeting if you would rather explain the project live.
+          Come with the idea, current challenge, timeline, budget range, and any
+          existing assets or code.
+        </p>
+        <a class="button button-accent start-project-meeting-button" href="#">Book a meeting →</a>
+        <p class="section-note">Meeting link coming soon. You can submit the project inquiry form for now.</p>
+        <!-- TODO: Replace this placeholder with Calendly, Cal.com, Google Calendar appointment schedule, or another booking link. -->
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<script is:inline>
+  const inquiryForm = document.querySelector("#project-inquiry-form");
+  const serviceSelect = inquiryForm?.querySelector("[data-service-select]");
+  const successMessage = inquiryForm?.querySelector("[data-form-success]");
+
+  const serviceMap = {
+    "websites-portals": "Websites & Portals",
+    "mvp-build": "MVP Build",
+    "product-rescue": "Product Rescue / Bug Fixing",
+    "monthly-build-partner": "Monthly Build Partner",
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const serviceParam = params.get("service");
+  if (serviceSelect && serviceParam && serviceMap[serviceParam]) {
+    serviceSelect.value = serviceMap[serviceParam];
+  }
+
+  inquiryForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    if (!inquiryForm.reportValidity()) return;
+
+    successMessage?.removeAttribute("hidden");
+    inquiryForm.reset();
+
+    if (serviceSelect && serviceParam && serviceMap[serviceParam]) {
+      serviceSelect.value = serviceMap[serviceParam];
+    }
+
+    // TODO: Connect this form to Formspree, Netlify Forms, Resend, or a custom backend API.
+  });
+</script>

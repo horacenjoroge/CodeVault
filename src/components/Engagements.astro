@@ -4,11 +4,12 @@ import SectionLabel from "./SectionLabel.astro";
 const offers = [
   {
     number: "01",
-    title: "Landing Page Sprint",
-    bestFor: "Businesses that need a sharp website that explains the offer and turns visitors into leads.",
-    includes: "Strategy, copy structure, responsive build, contact CTA, deployment support.",
-    timeline: "1–2 weeks depending on scope.",
-    cta: "Start a landing page sprint →",
+    title: "Websites & Portals",
+    bestFor: "Businesses that need a serious website, client portal, internal portal, or web presence that explains the offer, supports operations, and creates trust.",
+    includes: "Information architecture, UI direction, responsive build, forms, content structure, integrations, analytics setup, and deployment support.",
+    timeline: "Scoped after discovery.",
+    cta: "Start a website or portal inquiry →",
+    service: "Websites & Portals",
   },
   {
     number: "02",
@@ -17,6 +18,7 @@ const offers = [
     includes: "Scope, UI, frontend, backend, database, integrations, testing, launch support.",
     timeline: "Scoped after discovery.",
     cta: "Plan an MVP build →",
+    service: "MVP Build",
   },
   {
     number: "03",
@@ -25,6 +27,7 @@ const offers = [
     includes: "Audit, bug fixing, refactor plan, performance improvements, UI polish, deployment fixes.",
     timeline: "Depends on project condition.",
     cta: "Fix an existing product →",
+    service: "Product Rescue / Bug Fixing",
   },
   {
     number: "04",
@@ -33,6 +36,7 @@ const offers = [
     includes: "Planned milestones, weekly updates, feature work, fixes, reviews, and support.",
     timeline: "Monthly engagement.",
     cta: "Discuss ongoing support →",
+    service: "Monthly Build Partner",
   },
 ];
 ---
@@ -50,7 +54,18 @@ const offers = [
           <p><strong class="engagement-label">Best for:</strong> {offer.bestFor}</p>
           <p><strong class="engagement-label">Includes:</strong> {offer.includes}</p>
           <p class="engagement-timeline"><strong class="engagement-label">Timeline:</strong> {offer.timeline}</p>
-          <a class="text-link engagement-link" href="#final-cta">{offer.cta}</a>
+          <a
+            class="text-link engagement-link"
+            href={offer.service === "Websites & Portals"
+              ? "/start-project?service=websites-portals"
+              : offer.service === "MVP Build"
+                ? "/start-project?service=mvp-build"
+                : offer.service === "Product Rescue / Bug Fixing"
+                  ? "/start-project?service=product-rescue"
+                  : "/start-project?service=monthly-build-partner"}
+          >
+            {offer.cta}
+          </a>
         </article>
       ))}
     </div>
@@ -62,7 +77,7 @@ const offers = [
         launches, and rework. The goal is to make the scope clear, ship useful software,
         and keep you informed at every step.
       </p>
-      <a class="text-link value-callout-link" href="#final-cta">See what your project needs →</a>
+      <a class="text-link value-callout-link" href="/start-project">See what your project needs →</a>
     </div>
   </div>
 </section>

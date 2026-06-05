@@ -3,23 +3,29 @@ import SectionLabel from "./SectionLabel.astro";
 ---
 
 <section class="section section-dark" id="final-cta">
-  <div class="shell cta-grid" data-reveal>
-    <div>
-      <SectionLabel label="Next Step" />
-      <h2>Tell CodeVault what you need built. We’ll help you find the clearest path to ship it.</h2>
-    </div>
-
-    <div class="cta-copy">
+  <div class="shell cta-grid final-cta-grid" data-reveal>
+    <div class="final-cta-copy">
+      <SectionLabel label="Start A Project" />
+      <h2>
+        Ready to turn the idea into
+        <span class="final-cta-accent">a build plan?</span>
+      </h2>
       <p class="section-lead">
-        30 minutes. Bring the idea, broken workflow, unfinished product, deadline, and
-        budget range. We’ll help you understand what to build first and how to move forward.
+        Tell CodeVault what you need built, fixed, improved, or maintained. We’ll review
+        the details and help you understand the best next step.
       </p>
-      <div class="hero-actions">
-        <a class="button button-accent" href="mailto:hello@codevault.co.ke?subject=Project%20Inquiry">
-          Book 30 minutes →
+      <div class="hero-actions final-cta-links">
+        <a class="button button-accent final-cta-button" href="/start-project">
+          Start a project inquiry →
         </a>
-        <p>Or write: <a class="text-link text-link-light" href="mailto:hello@codevault.co.ke">hello@codevault.co.ke</a></p>
+        <a class="text-link text-link-light final-cta-secondary" href="/start-project#book-meeting">
+          Book a meeting →
+        </a>
       </div>
+      <p class="final-cta-email">
+        Prefer email? Send the rough idea to
+        <a class="text-link text-link-light" href="mailto:hello@codevault.co.ke">hello@codevault.co.ke</a>
+      </p>
     </div>
   </div>
 </section>
