@@ -2,11 +2,14 @@
 import "../styles/global.css";
 
 interface Props {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
-const { title, description } = Astro.props;
+const {
+  title = "CodeVault — Software systems for founders and growing teams",
+  description = "CodeVault helps founders and small teams build custom software, web applications, mobile applications, websites and portals, API integrations, databases, automations, and production-ready systems with clear scope and clean handoff.",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,10 +19,15 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta property="og:site_name" content="CodeVault" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.site?.toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <link rel="icon" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

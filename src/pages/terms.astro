@@ -1,0 +1,220 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const title = "Terms of Service — CodeVault";
+const description =
+  "Read CodeVault’s Terms of Service for using our website, submitting project inquiries, and engaging with our online materials.";
+const updated = "June 04, 2026";
+
+const sections = [
+  {
+    id: "who-we-are",
+    number: "01",
+    title: "Who We Are",
+    body: [
+      "CodeVault is a software development studio based in Kenya and working remotely.",
+    ],
+  },
+  {
+    id: "acceptance",
+    number: "02",
+    title: "Acceptance of Terms",
+    body: [
+      "By using the website or contacting CodeVault, users agree to these Terms.",
+    ],
+  },
+  {
+    id: "website-use",
+    number: "03",
+    title: "Website Use",
+    list: [
+      "Do not misuse the website",
+      "Do not attempt unauthorized access",
+      "Do not submit malicious code",
+      "Do not scrape or overload the site",
+      "Do not send unlawful, misleading, or infringing content",
+      "Do not impersonate others",
+    ],
+  },
+  {
+    id: "project-inquiries",
+    number: "04",
+    title: "Project Inquiries",
+    body: [
+      "Submitting a project inquiry does not create a client relationship. CodeVault may accept, reject, or request more details before agreeing to any work.",
+    ],
+  },
+  {
+    id: "commercial-services",
+    number: "05",
+    title: "Commercial Services",
+    body: [
+      "Paid work is governed by a separate written agreement, proposal, invoice, or statement of work.",
+      "That document should define scope, deliverables, timeline, fees, payment terms, revision process, intellectual property, confidentiality, support or maintenance, and cancellation terms.",
+    ],
+  },
+  {
+    id: "estimates",
+    number: "06",
+    title: "Estimates and Timelines",
+    body: [
+      "Any timeline, cost range, or estimate shared before a signed agreement is preliminary and may change after discovery or scoping.",
+    ],
+  },
+  {
+    id: "client-responsibilities",
+    number: "07",
+    title: "Client Responsibilities",
+    body: [
+      "Clients may need to provide accurate information, timely feedback, access to relevant systems, brand assets, content, approvals, and payment according to agreed terms.",
+      "Delays from the client may affect delivery timelines.",
+    ],
+  },
+  {
+    id: "ip",
+    number: "08",
+    title: "Intellectual Property",
+    body: [
+      "General website content belongs to CodeVault.",
+      "Project deliverable ownership should be handled in the separate commercial agreement. Until payment is complete, CodeVault may retain rights or withhold transfer depending on the agreement.",
+    ],
+  },
+  {
+    id: "third-parties",
+    number: "09",
+    title: "Third-Party Services",
+    body: [
+      "Projects may use third-party services such as hosting, APIs, AI providers, analytics, payment processors, email providers, or deployment platforms. CodeVault is not responsible for outages, pricing changes, or policies of third-party providers.",
+    ],
+  },
+  {
+    id: "ai-assisted",
+    number: "10",
+    title: "AI-Assisted Work",
+    body: [
+      "CodeVault may use AI-assisted tools to support development, documentation, planning, debugging, and research.",
+      "AI output is reviewed by the CodeVault team before being treated as project work. Clients should not send highly sensitive data unless handling terms are agreed.",
+    ],
+  },
+  {
+    id: "no-guarantees",
+    number: "11",
+    title: "No Guarantees",
+    body: [
+      "CodeVault does not guarantee specific business results such as revenue, traffic, funding, conversion rate, app-store approval, or search ranking unless expressly agreed in writing.",
+    ],
+  },
+  {
+    id: "disclaimer",
+    number: "12",
+    title: "Disclaimer",
+    body: [
+      "The website and materials are provided for general information. The site is provided “as is” without warranties.",
+    ],
+  },
+  {
+    id: "liability",
+    number: "13",
+    title: "Limitation of Liability",
+    body: [
+      "To the maximum extent permitted by law, CodeVault is not liable for indirect, incidental, consequential, special, or punitive damages arising from website use or reliance on website content.",
+      "Commercial project liability should be governed by the separate agreement.",
+    ],
+  },
+  {
+    id: "indemnity",
+    number: "14",
+    title: "Indemnity",
+    body: [
+      "Users agree not to hold CodeVault responsible for claims arising from misuse of the website, unlawful content submitted, or violation of these Terms.",
+    ],
+  },
+  {
+    id: "termination",
+    number: "15",
+    title: "Termination / Refusal of Service",
+    body: [
+      "CodeVault may refuse inquiries, block abusive users, or stop communication where there is misuse, fraud, harassment, unlawful activity, or conflict with CodeVault’s business standards.",
+    ],
+  },
+  {
+    id: "law",
+    number: "16",
+    title: "Governing Law",
+    body: [
+      "These Terms are governed by the laws of Kenya. Disputes are subject to the courts of Kenya unless a separate agreement states otherwise.",
+    ],
+  },
+  {
+    id: "changes",
+    number: "17",
+    title: "Changes to Terms",
+    body: [
+      "CodeVault may update these Terms and update the “Last updated” date.",
+    ],
+  },
+  {
+    id: "contact",
+    number: "18",
+    title: "Contact",
+    body: [
+      "Questions: hello@codevault.co.ke",
+    ],
+  },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <Header />
+  <main>
+    <section class="legal-hero">
+      <div class="legal-shell">
+        <span class="section-label">Legal</span>
+        <h1>Terms of Service</h1>
+        <p class="legal-updated">Last updated: {updated}</p>
+        <p class="legal-intro">
+          These Terms explain the rules for using the CodeVault website, contacting
+          CodeVault, submitting project inquiries, and engaging with CodeVault’s online
+          materials.
+        </p>
+        <p class="legal-notice">
+          Separate custom software development projects, paid engagements, and client
+          deliverables may be governed by separate written proposals, statements of work,
+          invoices, or service agreements. This page should be reviewed by legal counsel
+          before production use.
+        </p>
+      </div>
+    </section>
+
+    <section class="legal-content">
+      <div class="legal-shell">
+        <div class="legal-toc">
+          <p class="legal-toc-title">Contents</p>
+          <ol class="legal-toc-list">
+            {sections.map((section) => (
+              <li><a href={`#${section.id}`}>{section.title}</a></li>
+            ))}
+          </ol>
+        </div>
+
+        {sections.map((section) => (
+          <section class="legal-section" id={section.id}>
+            <span class="legal-section-number">{section.number}</span>
+            <h2>{section.title}</h2>
+            {section.body?.map((paragraph) => <p>{paragraph}</p>)}
+            {section.list && (
+              <ul>
+                {section.list.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+          </section>
+        ))}
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
